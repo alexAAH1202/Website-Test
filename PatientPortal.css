@@ -1,0 +1,91 @@
+.patient-portal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.patient-portal nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.patient-portal nav ul li {
+  margin-right: 20px;
+}
+
+.patient-portal nav ul li a {
+  text-decoration: none;
+  color: #4b0082;
+  font-weight: bold;
+}
+
+.patient-portal nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.patient-personal-details,
+.patient-reports,
+.patient-documents,
+.patient-appointments {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-personal-details input,
+.patient-documents input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #4682b4;
+  border-radius: 4px;
+}
+
+.patient-personal-details button,
+.patient-documents button {
+  padding: 8px 16px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.patient-personal-details button:hover,
+.patient-documents button:hover {
+  background-color: #6a5acd;
+}
+
+.patient-reports ul,
+.patient-documents ul,
+.patient-appointments ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.patient-reports li,
+.patient-documents li,
+.patient-appointments li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e6e6fa;
+  border-radius: 4px;
+}
+
+.patient-reports button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.patient-reports button:hover {
+  background-color: #6a5acd;
+}

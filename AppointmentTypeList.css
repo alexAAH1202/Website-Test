@@ -1,0 +1,94 @@
+.appointment-type-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .appointment-type-list h2 {
+    color: #4b0082;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .appointment-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #e6e6fa;
+    border-radius: 4px;
+  }
+  
+  .appointment-type h3 {
+    margin: 0;
+    color: #4b0082;
+  }
+  
+  .appointment-type button {
+    padding: 5px 10px;
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .appointment-type-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e6e6fa;
+    border-radius: 4px;
+  }
+  
+  .appointment-type-form h3 {
+    color: #4b0082;
+    margin-bottom: 15px;
+  }
+  
+  .appointment-type-form div {
+    margin-bottom: 15px;
+  }
+  
+  .appointment-type-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4b0082;
+    font-weight: bold;
+  }
+  
+  .appointment-type-form input[type="text"],
+  .appointment-type-form input[type="number"],
+  .appointment-type-form textarea,
+  .appointment-type-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #4682b4;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .appointment-type-form .billable-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .appointment-type-form button {
+    padding: 10px 20px;
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .appointment-type-form button:hover {
+    background-color: #6a5acd;
+  }
+
+
