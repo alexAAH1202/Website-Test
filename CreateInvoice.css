@@ -1,0 +1,82 @@
+.create-invoice {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-invoice h2 {
+  color: #4b0082;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.create-invoice form {
+  display: grid;
+  gap: 15px;
+}
+
+.create-invoice .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-invoice label {
+  margin-bottom: 5px;
+  color: #4b0082;
+  font-weight: bold;
+}
+
+.create-invoice input,
+.create-invoice select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #4682b4;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.create-invoice input[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.create-invoice .invoice-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  background-color: #e6e6fa;
+  border-radius: 4px;
+}
+
+.create-invoice button {
+  padding: 10px 20px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.create-invoice button:hover {
+  background-color: #6a5acd;
+}
+
+.create-invoice button[type="button"] {
+  background-color: #4682b4;
+}
+
+.create-invoice button[type="button"]:hover {
+  background-color: #5a9bd4;
+}
+
+@media (max-width: 600px) {
+  .create-invoice .invoice-item {
+    grid-template-columns: 1fr;
+  }
+}

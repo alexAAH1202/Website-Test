@@ -1,0 +1,98 @@
+import React, { useState, useEffect } from 'react';
+import { getPractitioners, getSmartAvailableSlots, bookAppointment } from '../services/api';
+import '../styles/AppointmentBooking.css';
+
+function AppointmentBooking() {
+  const [practitioners, setPractitioners] = useState([]);
+  const [selectedPractitioner, setSelectedPractitioner] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [availableSlots, setAvailableSlots] = useState([]);
+  const [selectedSlot, setSelectedSlot] = useState('');
+  const [quickBookSlot, setQuickBookSlot] = useState(null);
+
+  useEffect(() => {
+    fetchPractitioners();
+  }, []);
+
+  useEffect(() => {
+    if (selectedPractitioner && selectedDate) {
+      fetchSmartAvailableSlots();
+    }
+  }, [selectedPractitioner, selectedDate]);
+
+  const fetchPractitioners = async () => {
+    try {
+      const data = await getPractitioners();
+      setPractitioners(data);
+    } catch (error) {
+      console.error('Error fetching practitioners:', error);
+    }
+  };
+
+  const fetchSmartAvailableSlots = async () => {
+    try {
+      const data = await getSmartAvailableSlots(selectedPractitioner, selectedDate);
+      setAvailableSlots(data.availableSlots);
+      setQuickBookSlot(data.quickBookSlot);
+    } catch (error) {
+      console.error('Error fetching available slots:', error);
+    }
+  };
+
+  const handleBooking = async (slot) => {
+    try {
+      await bookAppointment(selectedPractitioner, selectedDate, slot);
+      alert('Appointment booked successfully!');
+      // Reset form or redirect to confirmation page
+      setSelectedSlot('');
+      fetchSmartAvailableSlots(); // Refresh available slots
+    } catch (error) {
+      console.error('Error booking appointment:', error);
+      alert('Failed to book appointment. Please try again.');
+    }
+  };
+
+  return (
+    <div className="appointment-booking">
+      <h2>Book an Appointment</h2>
+      <select
+        value={selectedPractitioner}
+        onChange={(e) => setSelectedPractitioner(e.target.value)}
+      >
+        <option value="">Select a practitioner</option>
+        {practitioners.map((practitioner) => (
+          <option key={practitioner.id} value={practitioner.id}>
+            {practitioner.name}
+          </option>
+        ))}
+      </select>
+      <input
+        type="date"
+        value={selectedDate}
+        onChange={(e) => setSelectedDate(e.target.value)}
+        min={new Date().toISOString().split('T')[0]}
+      />
+      {quickBookSlot && (
+        <div className="quick-book">
+          <p>Recommended slot: {quickBookSlot}</p>
+          <button onClick={() => handleBooking(quickBookSlot)}>Quick Book</button>
+        </div>
+      )}
+      {availableSlots.length > 0 && (
+        <div>
+          <h3>Available Slots:</h3>
+          <ul className="slot-list">
+            {availableSlots.map((slot) => (
+              <li key={slot}>
+                {slot}
+                <button onClick={() => handleBooking(slot)}>Book</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default AppointmentBooking;

@@ -1,0 +1,48 @@
+.public-booking {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.public-booking h1 {
+  color: #4b0082;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.public-booking form {
+  display: grid;
+  gap: 15px;
+}
+
+.public-booking label {
+  font-weight: bold;
+  color: #4b0082;
+}
+
+.public-booking input,
+.public-booking select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #4682b4;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.public-booking button {
+  padding: 10px 20px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.public-booking button:hover {
+  background-color: #6a5acd;
+}

@@ -1,0 +1,63 @@
+.business-booking-settings {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.business-booking-settings h2 {
+  color: #4b0082;
+  margin-bottom: 20px;
+}
+
+.business-booking-settings form {
+  display: grid;
+  gap: 15px;
+}
+
+.business-booking-settings .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.business-booking-settings label {
+  margin-bottom: 5px;
+  color: #4b0082;
+  font-weight: bold;
+}
+
+.business-booking-settings input {
+  padding: 8px;
+  border: 1px solid #4682b4;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.business-booking-settings .url-group {
+  display: flex;
+  gap: 10px;
+}
+
+.business-booking-settings .url-group input {
+  flex-grow: 1;
+  background-color: #e9ecef;
+}
+
+.business-booking-settings button {
+  padding: 8px 16px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.business-booking-settings button:hover {
+  background-color: #6a5acd;
+}
+
+.business-booking-settings .save-button {
+  justify-self: start;
+}
